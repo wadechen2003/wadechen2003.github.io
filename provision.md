@@ -1,5 +1,8 @@
 <meta charset=utf-8>
 
+![flow](http://i.imgur.com/hz2uwZV.png)
+
+
 ## BMS 
 * Device List -  
 firmware upgrade.target firmware 新增判斷條件 dealer_id
