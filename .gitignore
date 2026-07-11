@@ -1,0 +1,7 @@
+.DS_Store
+id_rsa*
+id_ed25519*
+*.pem
+*.key
+github
+github.pub
