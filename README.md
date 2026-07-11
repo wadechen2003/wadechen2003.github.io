@@ -13,8 +13,8 @@
 
 ## 新增一筆筆記/工具/紀錄
 
-1. 建立 `<category>/<slug>/index.html`（`category` 是 `notes`、`tools` 或 `logs`）
-2. 在 `assets/js/entries.js` 的 `SITE_ENTRIES` 加一筆：
+1. 建立 `<folder>/<slug>/index.html`（`folder` 是複數的資料夾名稱：`notes`、`tools` 或 `logs`）
+2. 在 `assets/js/entries.js` 的 `SITE_ENTRIES` 加一筆，注意 `category` 欄位是**單數**，必須跟 `SITE_CATEGORIES` 裡的 `key` 完全一致（`note`、`tool` 或 `log`，不是資料夾名稱）：
    ```js
    { title: "...", description: "...", url: "tools/<slug>/index.html", category: "tool", date: "YYYY-MM-DD" }
    ```
