@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPF GL Points 計算器 — Wade's Notes</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>IPF GL Points 計算器</h1>
+    <p class="tagline"><a href="../../index.html">&larr; 回首頁</a></p>
+  </header>
+
+  <main class="tool-page">
+    <form id="gl-form" class="gl-form">
+      <label>
+        性別
+        <select name="sex" required>
+          <option value="">請選擇</option>
+          <option value="men">男 Men</option>
+          <option value="women">女 Women</option>
+        </select>
+      </label>
+
+      <label>
+        裝備
+        <select name="equipment" required>
+          <option value="">請選擇</option>
+          <option value="classic">Classic（無裝備）</option>
+          <option value="equipped">Equipped（裝備）</option>
+        </select>
+      </label>
+
+      <label>
+        項目
+        <select name="event" required>
+          <option value="">請選擇</option>
+          <option value="powerlifting">Powerlifting（三項總和）</option>
+          <option value="bench">Bench Press</option>
+        </select>
+      </label>
+
+      <label>
+        體重（kg）
+        <input type="number" name="bodyweight" step="0.01" min="0" required>
+      </label>
+
+      <label>
+        成績（kg）
+        <input type="number" name="result" step="0.5" min="0" required>
+      </label>
+    </form>
+
+    <div class="gl-result">
+      <p id="result"></p>
+      <p id="hint" class="hint"></p>
+    </div>
+  </main>
+
+  <script src="gl-points.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
