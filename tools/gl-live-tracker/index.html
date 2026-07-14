@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL Live Tracker — Wade's Notes</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>GL Live Tracker</h1>
+    <p class="tagline"><a href="../../index.html">&larr; 回首頁</a></p>
+  </header>
+
+  <main class="tracker-page">
+    <section id="setup">
+      <p>建立新場次後，把網址分享給幫忙輸入對手成績的人即可即時同步。</p>
+      <button type="button" id="create-meet">建立新場次</button>
+    </section>
+
+    <section id="tracker" hidden>
+      <section class="settings-panel">
+        <label>
+          性別
+          <select id="settings-sex">
+            <option value="men">男 Men</option>
+            <option value="women">女 Women</option>
+          </select>
+        </label>
+        <label>
+          裝備
+          <select id="settings-equipment">
+            <option value="classic">Classic</option>
+            <option value="equipped">Equipped</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="me-panel">
+        <h2>我的成績</h2>
+        <label>體重 (kg) <input type="number" id="me-bodyweight" step="0.01" min="0"></label>
+        <label>Squat (kg) <input type="number" id="me-squat" step="0.5" min="0"></label>
+        <label>Bench (kg) <input type="number" id="me-bench" step="0.5" min="0"></label>
+        <label>Deadlift (kg) <input type="number" id="me-deadlift" step="0.5" min="0"></label>
+        <label>
+          下一項試舉
+          <select id="me-next-lift">
+            <option value="squat">Squat</option>
+            <option value="bench">Bench</option>
+            <option value="deadlift">Deadlift</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="opponents-panel">
+        <h2>對手</h2>
+        <table class="opponents-table">
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>體重</th>
+              <th>Squat</th>
+              <th>Bench</th>
+              <th>Deadlift</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="opponents-body"></tbody>
+        </table>
+      </section>
+
+      <section class="leaderboard-panel">
+        <h2>即時排行榜</h2>
+        <ul id="leaderboard-list"></ul>
+        <p id="gap-message"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="../ipf-gl-points/gl-points.js"></script>
+  <script src="meet.js"></script>
+  <script src="opponents-table.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
