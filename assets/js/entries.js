@@ -16,4 +16,11 @@ window.SITE_ENTRIES = [
     category: 'tool',
     date: '2026-07-11',
   },
+  {
+    title: 'GL Live Tracker',
+    description: '比賽當天即時輸入自己與對手的成績，追蹤 GL Points 差距',
+    url: 'tools/gl-live-tracker/index.html',
+    category: 'tool',
+    date: '2026-07-13',
+  },
 ];
