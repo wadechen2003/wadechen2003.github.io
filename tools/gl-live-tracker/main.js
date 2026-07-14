@@ -27,6 +27,10 @@ function setFieldIfNotFocused(input, value) {
   }
 }
 
+function setConnectionStatus(text) {
+  document.getElementById('connection-status').textContent = text;
+}
+
 function renderSettings(settings) {
   setFieldIfNotFocused(document.getElementById('settings-sex'), settings.sex || 'men');
   setFieldIfNotFocused(document.getElementById('settings-equipment'), settings.equipment || 'classic');
@@ -160,6 +164,7 @@ function wireSettingsInputs() {
 }
 
 function startMeet(meetId) {
+  setConnectionStatus('');
   currentMeetId = meetId;
   setMeetIdInUrl(meetId);
   document.getElementById('setup').hidden = true;
@@ -172,12 +177,24 @@ function startMeet(meetId) {
 document.addEventListener('DOMContentLoaded', function () {
   var existingMeetId = getMeetIdFromUrl();
 
+  document.getElementById('add-opponent').addEventListener('click', function () {
+    window.OpponentsTable.addEmptyRow(document.getElementById('opponents-body'), {
+      createId: createOpponentId,
+    });
+  });
+
   if (existingMeetId) {
-    joinOrCreateMeet(existingMeetId).then(startMeet);
+    setConnectionStatus('連線中…');
+    joinOrCreateMeet(existingMeetId).then(startMeet).catch(function () {
+      setConnectionStatus('連線失敗，請檢查網路');
+    });
     return;
   }
 
   document.getElementById('create-meet').addEventListener('click', function () {
-    joinOrCreateMeet(null).then(startMeet);
+    setConnectionStatus('連線中…');
+    joinOrCreateMeet(null).then(startMeet).catch(function () {
+      setConnectionStatus('連線失敗，請檢查網路');
+    });
   });
 });

@@ -105,7 +105,11 @@
     };
   }
 
-  var api = { reconcileRows: reconcileRows };
+  function addEmptyRow(tbody, handlers) {
+    addRow(tbody, handlers.createId(), {}, handlers);
+  }
+
+  var api = { reconcileRows: reconcileRows, addEmptyRow: addEmptyRow };
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = api;

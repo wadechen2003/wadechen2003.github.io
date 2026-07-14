@@ -87,3 +87,19 @@
   font-weight: bold;
   color: var(--accent);
 }
+
+#add-opponent {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+#connection-status {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  min-height: 1.2rem;
+}
