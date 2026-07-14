@@ -180,6 +180,12 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('add-opponent').addEventListener('click', function () {
     window.OpponentsTable.addEmptyRow(document.getElementById('opponents-body'), {
       createId: createOpponentId,
+      onChange: function (id, values) {
+        upsertOpponent(currentMeetId, id, values);
+      },
+      onRemove: function (id) {
+        removeOpponent(currentMeetId, id);
+      },
     });
   });
 
