@@ -1,0 +1,89 @@
+.tracker-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+#setup {
+  text-align: center;
+}
+
+#setup button,
+.opp-remove {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.settings-panel,
+.me-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.settings-panel label,
+.me-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.settings-panel select,
+.me-panel input,
+.me-panel select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--fg);
+}
+
+.opponents-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.opponents-table th,
+.opponents-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.opponents-table input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--fg);
+}
+
+.leaderboard-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.leaderboard-row {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-row--me {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+#gap-message {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent);
+}
